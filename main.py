@@ -36,7 +36,7 @@ createRepoBtn = driver.find_element(By.XPATH, "//button[@type='submit']")
 
 driver.find_element(By.ID, "new_repository").submit()
 
-driver.get("https://github.com/UltraViolet33/" + name_repo)
+driver.get("https://github.com/" + name_repo) #name user
 
 urlGitClone = driver.find_element(By.ID, "empty-setup-clone-url").get_attribute('value')
 
