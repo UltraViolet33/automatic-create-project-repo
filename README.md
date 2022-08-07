@@ -1,24 +1,26 @@
 # Create-Project-Automation
 
 ## Description
-This is a litte Python-Bash-Powershell project that creates a repo on your Github account and clone it on your computer, so you no more need to do it yourself.
+This is a little Python-Bash-Powershell project that creates a repo on your Github account and clone it on your computer, so you no more need to do it yourself.
 
 This project automates the project creation :  
-    - creates the repository in your Github account 
-    - creates the folder in the directory you indicates by cloning the repo
-    - creates the files you indicates according to the project type
-    - and open the project with your IDE
+- creates the repository in your Github account 
+- creates the folder in the directory you indicates by cloning the repo
+- creates the files you indicates according to the project type
+- and open the project with your IDE
 
 I used Python with Selenium for web scraping to log in Github and create the repository and bash and powershell scripts to clone the repository. 
 
 
 ## Python Script
-This script uses Selenium to create a repository in your github account.
+This script uses Selenium to create a repository in your Github account.
 It does not work everytime because Github can use double auth when Python log in but it is funny to look at.
 
 ## Steps
 
-1.  You need the driver of your browser to make it work, (chrome, firefox...) check the Selenium doc <a link="https://selenium-python.readthedocs.io/" target="_blank">here</a>
+1.  You need the driver of your browser to make it work, (chrome, firefox...) check the Selenium doc
+[here](https://selenium-python.readthedocs.io/)
+
 
 2. Put your Github pseudo or email in the main python file line 34
 ```python
