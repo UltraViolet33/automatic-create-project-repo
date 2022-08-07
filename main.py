@@ -36,7 +36,7 @@ time.sleep(5)
 # Your password
 input_pwd.send_keys(github_pwd)
 time.sleep(5)
-# btn_submit.click()
+btn_submit.click()
 
 driver.get("https://github.com/new")
 
@@ -56,5 +56,5 @@ url_to_clone = driver.find_element(
     By.ID, "empty-setup-clone-url").get_attribute('value')
 
 # call the script to clone the repo
-subprocess.call(['powershell', './commands_create_project.ps1',
+subprocess.call(['powershell', './scripts/commands_create_project.ps1',
                 repo_name, project_type, url_to_clone])
