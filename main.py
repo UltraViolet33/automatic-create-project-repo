@@ -21,6 +21,7 @@ elif len(sys.argv) > 4:
 else:
     sys.exit("Error, project name, project type or github password is missing")
 
+# You need the chrome driver
 driver = webdriver.Chrome()
 driver.get("https://github.com/login")
 time.sleep(1)
@@ -43,14 +44,17 @@ input_repo_name = driver.find_element(By.ID, 'repository_name')
 input_repo_name.send_keys(repo_name)
 
 # You repository will be private
-btn_radio_private_repo = driver.find_element(By.ID, "repository_visibility_private")
+btn_radio_private_repo = driver.find_element(
+    By.ID, "repository_visibility_private")
 btn_radio_private_repo.click()
 driver.find_element(By.ID, "new_repository").submit()
 
 # Put your pseudo
-driver.get("https://github.com/"+ "your_pseudo/" + repo_name)
+driver.get("https://github.com/" + "your_pseudo/" + repo_name)
 
-url_to_clone = driver.find_element(By.ID, "empty-setup-clone-url").get_attribute('value')
+url_to_clone = driver.find_element(
+    By.ID, "empty-setup-clone-url").get_attribute('value')
 
 # call the script to clone the repo
-subprocess.call(['powershell', './commands_create_project.ps1', repo_name, project_type, url_to_clone])
+subprocess.call(['powershell', './commands_create_project.ps1',
+                repo_name, project_type, url_to_clone])
